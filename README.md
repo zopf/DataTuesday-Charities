@@ -11,9 +11,15 @@ Results
 ---
 Don't bury the lede!  Here are the results on CartoDB: http://cdb.io/1tJwycX
 
+To do your own analysis, you might be interested in the CSV files of scraped data:
+- [results_processed.txt](data/results_processed.txt)
+- [results_processed.forcartodb.txt](data/results_processed.forcartodb.txt) - (zip9 -> zip5, $1,234 -> 1234)
+
 Implementation
 ---
 We're using Python scripts to scrape [CharityCheck101.org](http://www.CharityCheck101.org/)'s search results for NYC, fetching each HTML result document and later parsing them to extract relevant details.  Then, we're tweaking the data and uploading it to CartoDB, where we'll run some SQL queries to aggregate and visualize the results.
+
+The code should be readable and commented enough for you to peruse.
 
 How You'd Run It
 ---
