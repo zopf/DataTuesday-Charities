@@ -13,7 +13,7 @@ Don't bury the lede!  Here are the results on CartoDB: http://cdb.io/1tJwycX
 
 Implementation
 ---
-We're using Python scripts to scrape CharityCheck101.org's search results for NYC, fetching each HTML result document and later parsing them to extract relevant details.  Then, we're tweaking the data and uploading it to CartoDB, where we'll run some SQL queries to aggregate and visualize the results.
+We're using Python scripts to scrape [CharityCheck101.org](http://www.CharityCheck101.org/)'s search results for NYC, fetching each HTML result document and later parsing them to extract relevant details.  Then, we're tweaking the data and uploading it to CartoDB, where we'll run some SQL queries to aggregate and visualize the results.
 
 How You'd Run It
 ---
