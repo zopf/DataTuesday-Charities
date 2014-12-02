@@ -1,4 +1,4 @@
-# This file preprocesses the results file saved from CharityCheck101.org,
+# This script preprocesses the results file saved from CharityCheck101.org,
 # cleaning it into a form that can be easily processed by the next script.
 
 import re
