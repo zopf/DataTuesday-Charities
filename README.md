@@ -18,3 +18,20 @@ We're using Python scripts to scrape CharityCheck101.org's search results for NY
 How You'd Run It
 ---
 Look at the `run_it_all.sh` file to, well, run it all.  To actually enable the downloading of all HTML result files (which takes hours and totals over a gigabyte of downloaded content), you'll need to uncomment a couple lines.  But don't worry, all the data you'd get is already munged and included in the `results_processed.txt` file.
+
+CartoDBing
+---
+Here's how we transform the raw uploaded data to the aggregated results for the chart:
+```
+SELECT the_geom, the_geom_webmercator,
+COUNT(*) AS charity_count,
+FLOOR(MAX(total_revenues)) AS max_total_revenues,
+FLOOR(MAX(total_assets)) AS max_total_assets,
+FLOOR(SUM(total_revenues)) AS sum_total_revenues,
+FLOOR(SUM(total_assets)) AS sum_total_assets,
+FLOOR(AVG(total_revenues)) AS avg_total_revenues,
+FLOOR(AVG(total_assets)) AS avg_total_assets 
+FROM results_processed_forcartodb 
+WHERE subsection = '501(c)(3)' AND total_revenues > 0
+GROUP BY the_geom, the_geom_webmercator
+```
