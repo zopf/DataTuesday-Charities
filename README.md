@@ -31,7 +31,7 @@ FLOOR(SUM(total_revenues)) AS sum_total_revenues,
 FLOOR(SUM(total_assets)) AS sum_total_assets,
 FLOOR(AVG(total_revenues)) AS avg_total_revenues,
 FLOOR(AVG(total_assets)) AS avg_total_assets 
-FROM results_processed_forcartodb 
+FROM charitycheck101_scrape_nyc 
 WHERE subsection = '501(c)(3)' AND total_revenues > 0
 GROUP BY the_geom, the_geom_webmercator
 ```
