@@ -43,5 +43,5 @@ with open(input_file_path, 'r') as input_file:
     except:
       print "Failed to download %s: %s" % ( line, sys.exc_info()[0] )
 
-print 'Done downloading %d result URLs.'
+print 'Done downloading %d result URLs.' % processed_result_count
 print 'Finished.'
